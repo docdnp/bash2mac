@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+brew install autoconf bash binutils coreutils diffutils ed findutils flex gawk \
+    gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
+    screen watch wdiff wget zip bash-completion
+
+grep macos-setup-bash $HOME/.zprofile >&/dev/null || \
+echo '
+## macos-setup-bash
+path=(
+  /usr/local/{bin,brewbin,sbin}
+  $path[@]
+)
+## macos-setup-bash: end
+' >> $HOME/.zprofile
+
+
+grep macos-setup-bash $HOME/.profile >&/dev/null || \
+echo '
+## macos-setup-bash
+export PATH=/usr/local/bin:/usr/local/brewbin:/usr/local/sbin:$PATH
+source $HOME/.bashrc
+
+BREW_BIN="/usr/local/bin/brew"
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    BREW_BIN="/opt/homebrew/bin/brew"
+fi
+
+if type "${BREW_BIN}" &> /dev/null; then
+    export BREW_PREFIX="$("${BREW_BIN}" --prefix)"
+    for mandir in "${BREW_PREFIX}/opt/"*"/libexec/gnuman"; do export MANPATH=$mandir:$MANPATH; done
+    for mandir in "${BREW_PREFIX}/opt/"*"/share/man/man1"; do export MANPATH=$mandir:$MANPATH; done
+fi
+## macos-setup-bash: end
+' >> $HOME/.profile
+
+
+export PATH=/usr/local/bin:$PATH
+
+grep "$(command -v bash)" /etc/shells >&/dev/null \
+    || sudo bash -c 'echo "$(command -v bash)" >> /etc/shells; ln -s /opt/homebrew/bin /usr/local/brewbin'
+
+dscl . -read $HOME UserShell | grep bash >&/dev/null \
+    || chsh -s $(command -v bash)
+
+brew list autoconf bash binutils coreutils diffutils ed findutils flex gawk \
+    gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
+    screen watch wdiff wget zip \
+    | grep /bin/ | gxargs -i bash -c '
+        TOOL=$(basename {}); 
+        CTOOL=$(echo $TOOL| sed -re s/^g//); 
+        [ $TOOL == $CTOOL ] && exit; 
+        BIN=/opt/homebrew/bin; 
+        [ -f {} ] && [ -e $BIN/g$CTOOL ] && ln -s $BIN/$TOOL $BIN/$CTOOL 2>/dev/null'
+
+
+curl -sL https://raw.githubusercontent.com/docdnp/inputrc/main/shell.inputrc -o $HOME/.inputrc
+curl -sL https://gist.githubusercontent.com/marioBonales/1637696/raw/93a33aa5f1893f46773483250214f8b8b496a270/.bashrc -o $HOME/.bashrc
+sed -re 's|^#force_color_prompt|force_color_prompt|' $HOME/.bashrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>  $HOME/.bashrc
+echo '. /opt/homebrew/etc/profile.d/bash_completion.sh' >>  $HOME/.bashrc
+
+echo "Restart your terminal window to enable bash!"
