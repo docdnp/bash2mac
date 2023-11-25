@@ -39,7 +39,9 @@ This allows you to use the following shortcuts described below.
 | ⇧ + →       | end of line           |
 | ⌥ + ←       | move one word left    |
 | ⌥ + →       | move one word right   |
+| ⌥ + ⌫       | del previous word     |
 | ⌥ + -       | del next word         |
+| ⌫           | del previous char     |
 | ⌥ + ö       | del next char         |
 | ⌥ + u       | undo                  |
 | ⌥ + z       | undo                  |
@@ -47,3 +49,16 @@ This allows you to use the following shortcuts described below.
 | ⌃ + k       | del right from cursor |
 | ⌃ + u       | del left from cursor  |
 | ⌃ + u + u   | del complete line     |
+
+### Shortcuts: Additional command helpers: git
+
+| Shortcut       | Action                      |
+| -------------- | --------------------------- |
+| ⌥ + G + C      | `git checkout <cursor>`     |
+| ⌥ + g + a      | `git add <cursor>`          |
+| ⌥ + g + c      | `git commit -m '<cursor>'`  |
+| ⌥ + g + c + a  | `git commit -am '<cursor>'` |
+| ⌥ + g + s      | `git status -s -uno`        |
+| ⌥ + g + s + a  | `git status`                |
+| ⌥ + g + p      | `git pull`                  |
+| ⌥ + g + p + p  | `git push`                  |
