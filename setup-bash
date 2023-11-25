@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+DATE="$(date +%Y%m%d%H%M)"
+
 brew install autoconf bash binutils coreutils diffutils ed findutils flex gawk \
     gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
     screen watch wdiff wget zip bash-completion
 
-grep macos-setup-bash $HOME/.zprofile >&/dev/null || \
+grep macos-setup-bash $HOME/.zprofile >&/dev/null || {
+cp $HOME/.zprofile $HOME/.zprofile.macos-setup-bash.$DATE.bak
 echo '
 ## macos-setup-bash
 path=(
@@ -13,9 +16,10 @@ path=(
 )
 ## macos-setup-bash: end
 ' >> $HOME/.zprofile
+}
 
-
-grep macos-setup-bash $HOME/.profile >&/dev/null || \
+grep macos-setup-bash $HOME/.profile >&/dev/null || {
+[ -e $HOME/.profile  ] && cp $HOME/.profile $HOME/.profile.macos-setup-bash.$DATE.bak
 echo '
 ## macos-setup-bash
 export PATH=/usr/local/bin:/usr/local/brewbin:/usr/local/sbin:$PATH
@@ -32,8 +36,8 @@ if type "${BREW_BIN}" &> /dev/null; then
     for mandir in "${BREW_PREFIX}/opt/"*"/share/man/man1"; do export MANPATH=$mandir:$MANPATH; done
 fi
 ## macos-setup-bash: end
-' >> $HOME/.profile
-
+' > $HOME/.profile
+}
 
 export PATH=/usr/local/bin:$PATH
 
@@ -54,10 +58,10 @@ brew list autoconf bash binutils coreutils diffutils ed findutils flex gawk \
         [ -f {} ] && [ -e $BIN/g$CTOOL ] && ln -s $BIN/$TOOL $BIN/$CTOOL 2>/dev/null'
 
 
-curl -sL https://raw.githubusercontent.com/docdnp/inputrc/main/shell.inputrc -o $HOME/.inputrc
-curl -sL https://gist.githubusercontent.com/marioBonales/1637696/raw/93a33aa5f1893f46773483250214f8b8b496a270/.bashrc -o $HOME/.bashrc
-sed -re 's|^#force_color_prompt|force_color_prompt|' $HOME/.bashrc
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>  $HOME/.bashrc
-echo '. /opt/homebrew/etc/profile.d/bash_completion.sh' >>  $HOME/.bashrc
+[ -e $HOME/.inputrc ] && cp $HOME/.inputrc $HOME/.inputrc.macos-setup-bash.$DATE.bak
+[ -e $HOME/.bashrc  ] && cp $HOME/.bashrc $HOME/.bashrc.macos-setup-bash.$DATE.bak
+
+curl -sL https://raw.githubusercontent.com/docdnp/bash2mac/main/shell.inputrc -o $HOME/.inputrc
+curl -sL https://raw.githubusercontent.com/docdnp/bash2mac/main/shell.bashrc  -o $HOME/.bashrc
 
 echo "Restart your terminal window to enable bash!"
