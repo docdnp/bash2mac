@@ -44,8 +44,10 @@ export PATH=/usr/local/bin:$PATH
 grep "$(command -v bash)" /etc/shells >&/dev/null \
     || sudo bash -c 'echo "$(command -v bash)" >> /etc/shells; ln -s /opt/homebrew/bin /usr/local/brewbin'
 
-dscl . -read $HOME UserShell | grep bash >&/dev/null \
-    || chsh -s $(command -v bash)
+[ "$1" == "--use-as-default-shell" ] && {
+    dscl . -read $HOME UserShell | grep bash >&/dev/null \
+        || chsh -s $(command -v bash)
+}
 
 brew list autoconf bash binutils coreutils diffutils ed findutils flex gawk \
     gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
