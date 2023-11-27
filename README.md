@@ -4,8 +4,18 @@ Setup bash as default shell on macos.
 
 ## Install
 
+Install the latest bash and GNU utilities, so that bash behaves as on linux:
+
 ```
 curl -L https://raw.githubusercontent.com/docdnp/bash2mac/main/setup-bash | sh
+```
+
+In case you also want to set the bash as the default shell:
+
+```
+curl -L https://raw.githubusercontent.com/docdnp/bash2mac/main/setup-bash -o /tmp/setup-bash
+chmod +x /tmp/setup-bash
+/tmp/setup-bash --use-as-default-shell
 ```
 
 ## Shortcuts
