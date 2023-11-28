@@ -135,3 +135,18 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 | ⌥ + e + p + a          | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
 | ⌥ + e + p + a + n      | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
 
+### Shortcuts: Pipe to xargs
+
+**Idea is:**
+* (p)ipe to (x)args
+* at (e)ol: (p)ipe to (x)args
+
+| Shortcut               | Action                                        | Description                                                                    |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------------ |
+| ⌥ + x                  | `{your prompt} \| xargs {cursor}`             | pipe to xargs                                                                  |
+| ⌥ + x + n              | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command                                             |
+| ⌥ + x + i              | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command using `{}` as placeholder for input         |
+| ⌥ + e + x              | `{your prompt} \| xargs {cursor}`             | at EOL: pipe to xargs                                                          |
+| ⌥ + e + x + n          | `{your prompt} \| xargs -n1 {cursor}`         | at EOL: pipe to xargs one line per command                                     |
+| ⌥ + e + x + i          | `{your prompt} \| xargs -n1 {cursor}`         | at EOL: pipe to xargs one line per command using `{}` as placeholder for input |
+
