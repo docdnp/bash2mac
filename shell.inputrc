@@ -52,10 +52,10 @@ $if Bash
 "\ei\ep":        "\e.\C-b  |\C-x\C-x"                   # insert pipe at next blank
 
 # (a)ppend, e.g. (l)oop - (b)ody
-"\ea\es":        " -e '/?/' \e[1~\e?"                   # append sed match //
-"\ea\es\es":     " -e 's/?//' \e[1~\e?"                 # append sed subst s///
-"\ea\ea\es":     "\e[F\ea\es"                           # append sed match //
-"\ea\ea\es\es":  "\e[F\ea\es\C-s"                       # append sed subst s///
+"\eA\eS":        " -e '/?/' \e[1~\e?"                   # append sed match //
+"\eA\eS\eS":     " -e 's/?//' \e[1~\e?"                 # append sed subst s///
+"\eA\eA\eS":     "\e[F\ea\es"                           # append sed match //
+"\eA\eA\eS\eS":  "\e[F\ea\es\C-s"                       # append sed subst s///
 
 # (p)ipe to (a)pp, e.g. (p)ipe to (g)rep
 "\ep\eg":           " | \ei\eg\e[99~"                   # pipe to grep
