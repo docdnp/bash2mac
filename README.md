@@ -22,6 +22,8 @@ chmod +x /tmp/setup-bash
 
 Activate "Option as Meta" in your terminal (Shortcut: `Command + Option + O`).
 This allows you to use the following shortcuts described below.
+Most shortcut insertions are executed at the "current cursor position" (CCP).
+Those that are always applied to the "end of line" (EOL) are marked with EOL.
 
 ### Shortcuts: Special characters
 
@@ -62,16 +64,16 @@ This allows you to use the following shortcuts described below.
 
 ### Shortcuts: Additional command helpers: git
 
-| Shortcut       | Action                      |
-| -------------- | --------------------------- |
-| ⌥ + G + C      | `git checkout {cursor}`     |
-| ⌥ + g + a      | `git add {cursor}`          |
-| ⌥ + g + c      | `git commit -m '{cursor}'`  |
-| ⌥ + g + c + a  | `git commit -am '{cursor}'` |
-| ⌥ + g + s      | `git status -s -uno`        |
-| ⌥ + g + s + a  | `git status`                |
-| ⌥ + g + p      | `git pull`                  |
-| ⌥ + g + p + p  | `git push`                  |
+| Shortcut       | Action                      | Description                                |
+| -------------- | --------------------------- | ------------------------------------------ |
+| ⌥ + G + C      | `git checkout {cursor}`     |                                            |
+| ⌥ + g + a      | `git add {cursor}`          |                                            |
+| ⌥ + g + c      | `git commit -m '{cursor}'`  |                                            |
+| ⌥ + g + c + a  | `git commit -am '{cursor}'` | Git: Add tracked and commit                |
+| ⌥ + g + s      | `git status -s -uno`        | Git: Short status                          |
+| ⌥ + g + s + a  | `git status`                |                                            |
+| ⌥ + g + p      | `git pull`                  |                                            |
+| ⌥ + g + p + p  | `git push`                  |                                            |
 
 ### Shortcuts: Shell redirects
 
@@ -83,4 +85,53 @@ This allows you to use the following shortcuts described below.
 | ⌥ + r + o + n  | `{your prompt} 1> /dev/null {cursor}` | redirect STDOUT to /dev/null               |
 | ⌥ + r + e + n  | `{your prompt} 2> /dev/null {cursor}` | redirect STDERR to /dev/null               |
 | ⌥ + r + a + n  | `{your prompt} >& /dev/null {cursor}` | redirect STDOUT and STDERR to /dev/null    |
+
+### Shortcuts: Pipe to grep
+
+**Idea is:** (p)ipe to (g)rep
+
+| Shortcut           | Action                                 | Description                                |
+| ------------------ | -------------------------------------- | ------------------------------------------ |
+| ⌥ + p + g          | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
+| ⌥ + p + g + e      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
+| ⌥ + p + g + v      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
+| ⌥ + p + g + e + v  | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
+
+### Shortcuts: Pipe to grep (at EOL)
+
+**Idea is:** at (e)ol: (p)ipe to (g)rep
+
+| Shortcut               | Action                                 | Description                                |
+| ---------------------- | -------------------------------------- | ------------------------------------------ |
+| ⌥ + e + p + g          | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
+| ⌥ + e + p + g + e      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
+| ⌥ + e + p + g + v      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
+| ⌥ + e + p + g + e + v  | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
+
+
+### Shortcuts: Pipe to sed and awk
+
+**Idea is:** 
+* (p)ipe to (s)ed
+* (p)ipe to (a)wk
+
+| Shortcut           | Action                                        | Description                                |
+| ------------------ | --------------------------------------------- | ------------------------------------------ |
+| ⌥ + p + s          | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
+| ⌥ + p + s + t      | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
+| ⌥ + p + a          | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
+| ⌥ + p + a + n      | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
+
+### Shortcuts: Pipe to sed and awk (at EOL)
+
+**Idea is:** 
+* at (e)ol: (p)ipe to (s)ed
+* at (e)ol: (p)ipe to (a)wk
+
+| Shortcut               | Action                                        | Description                                |
+| ---------------------- | --------------------------------------------- | ------------------------------------------ |
+| ⌥ + e + p + s          | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
+| ⌥ + e + p + s + t      | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
+| ⌥ + e + p + a          | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
+| ⌥ + e + p + a + n      | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
 
