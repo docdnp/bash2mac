@@ -64,11 +64,23 @@ This allows you to use the following shortcuts described below.
 
 | Shortcut       | Action                      |
 | -------------- | --------------------------- |
-| ⌥ + G + C      | `git checkout <cursor>`     |
-| ⌥ + g + a      | `git add <cursor>`          |
-| ⌥ + g + c      | `git commit -m '<cursor>'`  |
-| ⌥ + g + c + a  | `git commit -am '<cursor>'` |
+| ⌥ + G + C      | `git checkout {cursor}`     |
+| ⌥ + g + a      | `git add {cursor}`          |
+| ⌥ + g + c      | `git commit -m '{cursor}'`  |
+| ⌥ + g + c + a  | `git commit -am '{cursor}'` |
 | ⌥ + g + s      | `git status -s -uno`        |
 | ⌥ + g + s + a  | `git status`                |
 | ⌥ + g + p      | `git pull`                  |
 | ⌥ + g + p + p  | `git push`                  |
+
+### Shortcuts: Shell redirects
+
+| Shortcut       | Action                                | Description                                |
+| -------------- | ------------------------------------- | ------------------------------------------ |
+| ⌥ + r + o      | `{your prompt} 1> {cursor}`           | redirect STDOUT                            |
+| ⌥ + r + e      | `{your prompt} 2> {cursor}`           | redirect STDERR                            |
+| ⌥ + r + a      | `{your prompt} >& {cursor}`           | redirect STDOUT and STDERR                 |
+| ⌥ + r + o + n  | `{your prompt} 1> /dev/null {cursor}` | redirect STDOUT to /dev/null               |
+| ⌥ + r + e + n  | `{your prompt} 2> /dev/null {cursor}` | redirect STDERR to /dev/null               |
+| ⌥ + r + a + n  | `{your prompt} >& /dev/null {cursor}` | redirect STDOUT and STDERR to /dev/null    |
+
