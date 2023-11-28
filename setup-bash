@@ -11,7 +11,8 @@ cp $HOME/.zprofile $HOME/.zprofile.macos-setup-bash.$DATE.bak
 echo '
 ## macos-setup-bash
 path=(
-  /usr/local/{bin,brewbin,sbin}
+  /usr/local/{bin,sbin}
+  /opt/homebrew/bin
   $path[@]
 )
 ## macos-setup-bash: end
@@ -22,7 +23,7 @@ grep macos-setup-bash $HOME/.profile >&/dev/null || {
 [ -e $HOME/.profile  ] && cp $HOME/.profile $HOME/.profile.macos-setup-bash.$DATE.bak
 echo '
 ## macos-setup-bash
-export PATH=/usr/local/bin:/usr/local/brewbin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH
 source $HOME/.bashrc
 
 BREW_BIN="/usr/local/bin/brew"
