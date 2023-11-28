@@ -68,7 +68,7 @@ $if Bash
 "\ep\ea\en":        " | awk NF"                         # pipe to awk NF / remove empty lines
 "\ep\ex":           " | xargs "                         # pipe to xargs
 "\ep\ex\en":        " | xargs -n1 "                     # pipe to xargs -n1
-"\ep\ex\en\ei":     " | xargs -n1 -i "                  # pipe to xargs -n1 -i
+"\ep\ex\en\ei":     " | xargs -i "                      # pipe to xargs -i
 "\ep\el":           " | less "                          # pipe to less
 "\ep\et":           " | tail "                          # pipe to tail
 "\ep\et\ef":        " | tail -f "                       # pipe to tail -f
@@ -93,7 +93,7 @@ $if Bash
 "\ee\ep\ea\en":        "\e[F\ep\ea\en\e[99~"            # pipe at EOL to awk NF / remove empty lines
 "\ee\ep\ex":           "\e[F\ep\ex\e[99~"               # pipe at EOL to xargs
 "\ee\ep\ex\en":        "\e[F\ep\ex\en\e[99~"            # pipe at EOL to xargs -n1
-"\ee\ep\ex\en\ei":     "\e[F\ep\ex\en\ei\e[99~"         # pipe at EOL to xargs -n1 -i
+"\ee\ep\ex\ei":        "\e[F\ep\ex\ei\e[99~"            # pipe at EOL to xargs -i
 "\ee\ep\el":           "\e[F\ep\el\e[99~"               # pipe at EOL to less
 "\ee\ep\et":           "\e[F\ep\et\e[99~"               # pipe at EOL to tail
 "\ee\ep\et\ef":        "\e[F\ep\et\ef\e[99~"            # pipe at EOL to tail -f
