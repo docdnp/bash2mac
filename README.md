@@ -27,7 +27,7 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 
 ### Shortcuts: Special characters
 
-| Shortcut    | Character  |
+| Shortcut<img width=100/>  | Character<img width=280/> |
 | ----------- | ---------- |
 | ⌥ + 1       | ~          |
 | ⌥ + 5       | [          |
@@ -41,7 +41,7 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 
 ### Shortcuts: History and line actions
 
-| Shortcut    | Action                |
+| Shortcut<img width=100/>    | Action<img width=300/>                |
 | ----------- | --------------------- |
 | ⌥ + 2       | top of history        |
 | ⌥ + 3       | end of history        |
@@ -64,49 +64,49 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 
 ### Shortcuts: Additional command helpers: git
 
-| Shortcut       | Action                      | Description                                |
-| -------------- | --------------------------- | ------------------------------------------ |
-| ⌥ + G + C      | `git checkout {cursor}`     |                                            |
-| ⌥ + g + a      | `git add {cursor}`          |                                            |
-| ⌥ + g + c      | `git commit -m '{cursor}'`  |                                            |
-| ⌥ + g + c + a  | `git commit -am '{cursor}'` | Git: Add tracked and commit                |
-| ⌥ + g + s      | `git status -s -uno`        | Git: Short status                          |
-| ⌥ + g + s + a  | `git status`                |                                            |
-| ⌥ + g + p      | `git pull`                  |                                            |
-| ⌥ + g + p + p  | `git push`                  |                                            |
+| Shortcut<img width=100/> | Action<img width=300/>      | Description<img width=300/>    |
+| ------------------------ | --------------------------- | ------------------------------ |
+| ⌥ + G + C                | `git checkout {cursor}`     |                                |
+| ⌥ + g + a                | `git add {cursor}`          |                                |
+| ⌥ + g + c                | `git commit -m '{cursor}'`  |                                |
+| ⌥ + g + c + a            | `git commit -am '{cursor}'` | Git: Add tracked and commit    |
+| ⌥ + g + s                | `git status -s -uno`        | Git: Short status              |
+| ⌥ + g + s + a            | `git status`                |                                |
+| ⌥ + g + p                | `git pull`                  |                                |
+| ⌥ + g + p + p            | `git push`                  |                                |
 
 ### Shortcuts: Shell redirects
 
-| Shortcut       | Action                                | Description                                |
-| -------------- | ------------------------------------- | ------------------------------------------ |
-| ⌥ + r + o      | `{your prompt} 1> {cursor}`           | redirect STDOUT                            |
-| ⌥ + r + e      | `{your prompt} 2> {cursor}`           | redirect STDERR                            |
-| ⌥ + r + a      | `{your prompt} >& {cursor}`           | redirect STDOUT and STDERR                 |
-| ⌥ + r + o + n  | `{your prompt} 1> /dev/null {cursor}` | redirect STDOUT to /dev/null               |
-| ⌥ + r + e + n  | `{your prompt} 2> /dev/null {cursor}` | redirect STDERR to /dev/null               |
-| ⌥ + r + a + n  | `{your prompt} >& /dev/null {cursor}` | redirect STDOUT and STDERR to /dev/null    |
+| Shortcut<img width=100/> | Action<img width=300/>                | Description<img width=300/>                |
+| ------------------------ | ------------------------------------- | ------------------------------------------ |
+| ⌥ + r + o                | `{your prompt} 1> {cursor}`           | redirect STDOUT                            |
+| ⌥ + r + e                | `{your prompt} 2> {cursor}`           | redirect STDERR                            |
+| ⌥ + r + a                | `{your prompt} >& {cursor}`           | redirect STDOUT and STDERR                 |
+| ⌥ + r + o + n            | `{your prompt} 1> /dev/null {cursor}` | redirect STDOUT to /dev/null               |
+| ⌥ + r + e + n            | `{your prompt} 2> /dev/null {cursor}` | redirect STDERR to /dev/null               |
+| ⌥ + r + a + n            | `{your prompt} >& /dev/null {cursor}` | redirect STDOUT and STDERR to /dev/null    |
 
 ### Shortcuts: Pipe to grep
 
 **Idea is:** (p)ipe to (g)rep
 
-| Shortcut           | Action                                 | Description                                |
-| ------------------ | -------------------------------------- | ------------------------------------------ |
-| ⌥ + p + g          | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
-| ⌥ + p + g + e      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
-| ⌥ + p + g + v      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
-| ⌥ + p + g + e + v  | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
+| Shortcut<img width=100/> | Action<img width=300/>                 | Description<img width=300/>                |
+| ------------------------ | -------------------------------------- | ------------------------------------------ |
+| ⌥ + p + g                | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
+| ⌥ + p + g + e            | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
+| ⌥ + p + g + v            | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
+| ⌥ + p + g + e + v        | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
 
 ### Shortcuts: Pipe to grep (at EOL)
 
 **Idea is:** at (e)ol: (p)ipe to (g)rep
 
-| Shortcut               | Action                                 | Description                                |
-| ---------------------- | -------------------------------------- | ------------------------------------------ |
-| ⌥ + e + p + g          | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
-| ⌥ + e + p + g + e      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
-| ⌥ + e + p + g + v      | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
-| ⌥ + e + p + g + e + v  | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
+| Shortcut<img width=100/> | Action<img width=300/>                 | Description<img width=300/>                |
+| ------------------------ | -------------------------------------- | ------------------------------------------ |
+| ⌥ + e + p + g            | `{your prompt} \| grep '{cursor}'`     | pipe to grep                               |
+| ⌥ + e + p + g + e        | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -E (using regexps)            |
+| ⌥ + e + p + g + v        | `{your prompt} \| grep -E '{cursor}'`  | pipe to grep -v (exclude)                  |
+| ⌥ + e + p + g + e + v    | `{your prompt} \| grep -Ev '{cursor}'` | pipe to grep -Ev (exclude using regexps)   |
 
 
 ### Shortcuts: Pipe to sed and awk
@@ -115,12 +115,12 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 * (p)ipe to (s)ed
 * (p)ipe to (a)wk
 
-| Shortcut           | Action                                        | Description                                |
-| ------------------ | --------------------------------------------- | ------------------------------------------ |
-| ⌥ + p + s          | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
-| ⌥ + p + s + t      | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
-| ⌥ + p + a          | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
-| ⌥ + p + a + n      | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
+| Shortcut<img width=100/> | Action<img width=300/>                        | Description<img width=300/>                |
+| ------------------------ | --------------------------------------------- | ------------------------------------------ |
+| ⌥ + p + s                | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
+| ⌥ + p + s + t            | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
+| ⌥ + p + a                | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
+| ⌥ + p + a + n            | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
 
 ### Shortcuts: Pipe to sed and awk (at EOL)
 
@@ -128,30 +128,30 @@ Those that are always applied to the "end of line" (EOL) are marked with EOL.
 * at (e)ol: (p)ipe to (s)ed
 * at (e)ol: (p)ipe to (a)wk
 
-| Shortcut               | Action                                        | Description                                |
-| ---------------------- | --------------------------------------------- | ------------------------------------------ |
-| ⌥ + e + p + s          | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
-| ⌥ + e + p + s + t      | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
-| ⌥ + e + p + a          | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
-| ⌥ + e + p + a + n      | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
+| Shortcut<img width=100/> | Action<img width=300/>                        | Description<img width=300/>                |
+| ------------------------ | --------------------------------------------- | ------------------------------------------ |
+| ⌥ + e + p + s            | `{your prompt} \| sed -re 's\|{cursor}\|\|'`  | pipe to sed for replacing using regexps    |
+| ⌥ + e + p + s + t        | `{your prompt} \| sed -n  '/^{cursor}/,/^/p'` | pipe to sed to extract between two TOKENs  |
+| ⌥ + e + p + a            | `{your prompt} \| awk '{print {cursor}}'`     | pipe to awk to print specific column       |
+| ⌥ + e + p + a + n        | `{your prompt} \| awk NF{cursor}`             | pipe to awk to delete empty lines          |
 
 ### Shortcuts: Pipe to xargs
 
 **Idea is:** (p)ipe to (x)args
 
-| Shortcut               | Action                                        | Description                                                                |
-| ---------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
-| ⌥ + x                  | `{your prompt} \| xargs {cursor}`             | pipe to xargs                                                              |
-| ⌥ + x + n              | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command                                         |
-| ⌥ + x + i              | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command using `{}` as <br>placeholder for input |
+| Shortcut<img width=100/> | Action<img width=300/>                        | Description<img width=300/>                                                |
+| ------------------------ | --------------------------------------------- | -------------------------------------------------------------------------- |
+| ⌥ + x                    | `{your prompt} \| xargs {cursor}`             | pipe to xargs                                                              |
+| ⌥ + x + n                | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command                                         |
+| ⌥ + x + i                | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command using `{}` as <br>placeholder for input |
 
 ### Shortcuts: Pipe to xargs (EOL)
 
 **Idea is:** at (e)ol: (p)ipe to (x)args
 
-| Shortcut               | Action                                        | Description                                                                |
-| ---------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
-| ⌥ + e + x              | `{your prompt} \| xargs {cursor}`             | pipe to xargs                                                              |
-| ⌥ + e + x + n          | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command                                         |
-| ⌥ + e + x + i          | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command using `{}` as <br>placeholder for input |
+| Shortcut<img width=100/> | Action<img width=300/>                        | Description<img width=300/>                                                |
+| ------------------------ | --------------------------------------------- | -------------------------------------------------------------------------- |
+| ⌥ + e + x                | `{your prompt} \| xargs {cursor}`             | pipe to xargs                                                              |
+| ⌥ + e + x + n            | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command                                         |
+| ⌥ + e + x + i            | `{your prompt} \| xargs -n1 {cursor}`         | pipe to xargs one line per command using `{}` as <br>placeholder for input |
 
