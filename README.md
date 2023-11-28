@@ -20,7 +20,7 @@ chmod +x /tmp/setup-bash
 
 ## Shortcuts
 
-Activate "Option as Meta" in your terminal (Shortcut: `Command + Option + O`).
+Activate "Option as Meta" in your terminal (Shortcut: `⌘ + ⌥ + O`).
 This allows you to use the following shortcuts described below.
 Most shortcut insertions are executed at the "current cursor position" (CCP).
 Those that are always applied to the "end of line" (EOL) are marked with EOL.
